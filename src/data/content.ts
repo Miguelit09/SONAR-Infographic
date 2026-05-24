@@ -103,11 +103,13 @@ export const VIEW03 = {
       title: 'Medición de distancia',
       description:
         'Calcula profundidad usando el tiempo del eco. La fórmula básica relaciona velocidad del sonido y tiempo de ida y vuelta.',
+      imageKey: 'view03_task_measurement',
     },
     {
       title: 'Filtrado de ruido',
       description: 'Elimina interferencias producidas por:',
       items: ['Corrientes', 'Burbujas', 'Otros sonidos marinos'],
+      imageKey: 'view03_task_filtering',
     },
     {
       title: 'Construcción de imágenes y mapas',
@@ -118,6 +120,7 @@ export const VIEW03 = {
         'Detección de peces u objetos',
         'Análisis geológicos',
       ],
+      imageKey: 'view03_task_maps',
     },
     {
       title: 'Interpretación científica',
@@ -128,6 +131,7 @@ export const VIEW03 = {
         'Investigar ecosistemas marinos',
         'Medir profundidades oceánicas',
       ],
+      imageKey: 'view03_task_science',
     },
   ],
   formula: {

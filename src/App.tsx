@@ -27,7 +27,7 @@ function App() {
         <References />
       </main>
       <footer className="site-footer">
-        <p>Infografía interactiva — SONAR y ecosondas en geofísica y oceanografía</p>
+        <p>SONAR y ecosondas en geofísica y oceanografía</p>
       </footer>
     </div>
   );

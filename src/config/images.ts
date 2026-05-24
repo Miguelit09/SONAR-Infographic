@@ -38,18 +38,30 @@ export const IMAGES: Record<string, ImageSlot> = {
     caption: 'Del eco acústico a los datos digitales (ADC)',
   },
 
-  // Vista 3 — Software
-  view03_bathymetryMap: {
-    id: 'view03_bathymetryMap',
+  // Vista 3 — Software (carrusel de tareas)
+  view03_task_measurement: {
+    id: 'view03_task_measurement',
     src: '',
-    alt: 'Mapa batimétrico del fondo marino',
-    caption: 'Mapa generado por procesamiento de datos de ecosonda',
+    alt: 'Medición de profundidad con ecosonda',
+    caption: 'Cálculo de distancia a partir del tiempo de eco',
   },
-  view03_3dModel: {
-    id: 'view03_3dModel',
+  view03_task_filtering: {
+    id: 'view03_task_filtering',
     src: '',
-    alt: 'Modelo 3D del relieve submarino',
-    caption: 'Visualización 3D del fondo oceánico',
+    alt: 'Filtrado de señal y reducción de ruido marino',
+    caption: 'Eliminación de interferencias en la señal acústica',
+  },
+  view03_task_maps: {
+    id: 'view03_task_maps',
+    src: '',
+    alt: 'Mapa batimétrico y modelos del fondo marino',
+    caption: 'Construcción de mapas e imágenes del fondo oceánico',
+  },
+  view03_task_science: {
+    id: 'view03_task_science',
+    src: '',
+    alt: 'Análisis científico de datos oceanográficos',
+    caption: 'Interpretación para geofísica y oceanografía',
   },
 
   // Vista 4 — Resultados
@@ -81,6 +93,8 @@ export const IMAGES: Record<string, ImageSlot> = {
   },
 };
 
-export function getImage(key: keyof typeof IMAGES): ImageSlot {
+export type ImageKey = keyof typeof IMAGES;
+
+export function getImage(key: ImageKey): ImageSlot {
   return IMAGES[key];
 }

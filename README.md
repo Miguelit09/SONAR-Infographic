@@ -55,8 +55,10 @@ Si `src` está vacío (`''`), se muestra un **placeholder** con el texto alterna
 | `view01_frequencyDiagram` | 1 | Comparación frecuencias altas vs bajas |
 | `view02_transducer` | 2 | Transductor en barco o ROV |
 | `view02_signalChain` | 2 | Cadena sensor → ADC → software |
-| `view03_bathymetryMap` | 3 | Mapa batimétrico del fondo marino |
-| `view03_3dModel` | 3 | Modelo 3D del relieve submarino |
+| `view03_task_measurement` | 3 | Carrusel: medición de profundidad |
+| `view03_task_filtering` | 3 | Carrusel: filtrado de ruido |
+| `view03_task_maps` | 3 | Carrusel: mapas e imágenes del fondo marino |
+| `view03_task_science` | 3 | Carrusel: interpretación científica |
 | `view04_userResults` | 4 | Pantalla o mapa de resultados para el usuario |
 | `view04_submarineMap` | 4 | Mapa con detección de objetos |
 | `view06_noaa` | 6 | Expedición oceanográfica / NOAA |

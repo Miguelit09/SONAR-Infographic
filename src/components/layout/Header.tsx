@@ -1,11 +1,15 @@
+import { useRef } from 'react';
 import { SITE } from '../../data/content';
 import { useScrollProgress } from '../../hooks/useActiveSection';
+import { useHeaderHeight } from '../../hooks/useHeaderHeight';
 
 export function Header() {
+  const headerRef = useRef<HTMLElement>(null);
   const progress = useScrollProgress();
+  useHeaderHeight(headerRef);
 
   return (
-    <header className="site-header">
+    <header ref={headerRef} className="site-header">
       <div
         className="scroll-progress"
         style={{ transform: `scaleX(${progress})` }}
