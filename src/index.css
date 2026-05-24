@@ -27,6 +27,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -54,10 +55,14 @@ body {
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(45, 212, 191, 0.12), transparent),
     radial-gradient(ellipse 60% 40% at 100% 100%, rgba(26, 158, 140, 0.08), transparent);
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 #root {
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 h1,
@@ -95,6 +100,8 @@ code {
     'nav main'
     'nav footer';
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 .site-header {
@@ -135,6 +142,7 @@ code {
   margin: 0;
   font-size: clamp(1.35rem, 3vw, 1.85rem);
   font-weight: 700;
+  overflow-wrap: anywhere;
 }
 
 .side-nav {
@@ -209,6 +217,8 @@ code {
 .main-content {
   grid-area: main;
   padding: 2rem 2rem 3rem;
+  min-width: 0;
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -231,6 +241,8 @@ code {
   padding-bottom: 3rem;
   border-bottom: 1px solid var(--color-border);
   scroll-margin-top: calc(var(--header-height, 0px) + 1rem);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .view-section:last-child {
@@ -279,7 +291,7 @@ code {
 }
 
 .card-grid--2 {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
 }
 
 .info-card {
@@ -324,7 +336,7 @@ code {
 
 .media-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1rem;
   margin: 1.5rem 0;
 }
@@ -342,8 +354,10 @@ code {
 }
 
 .image-slot__img {
-  object-fit: cover;
+  object-fit: fill;
   display: block;
+  max-width: 100%;
+  height: auto;
   border: 1px solid var(--color-border);
 }
 
@@ -357,6 +371,8 @@ code {
   text-align: center;
   background: var(--color-bg-elevated);
   border: 2px dashed var(--color-border);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .image-slot__icon {
@@ -557,7 +573,7 @@ code {
 
 .conversion-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
   gap: 0.75rem;
   margin-top: 1rem;
 }
@@ -623,6 +639,8 @@ code {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   outline: none;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .task-carousel:focus-visible {
@@ -633,6 +651,8 @@ code {
 .task-carousel__viewport {
   overflow: hidden;
   border-radius: 8px;
+  width: 100%;
+  min-width: 0;
 }
 
 .task-carousel__track {
@@ -648,7 +668,9 @@ code {
 
 .task-carousel__slide {
   flex: 0 0 100%;
-  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -677,8 +699,9 @@ code {
 
 .task-carousel__controls {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 1rem;
   margin-top: 1.25rem;
   padding-top: 1rem;
@@ -756,7 +779,7 @@ code {
 
 .software-tools {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -776,10 +799,11 @@ code {
 
 .formula-block__equation {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
   margin-bottom: 1.25rem;
 }
 
@@ -966,7 +990,7 @@ code {
 /* Examples */
 .example-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 1rem;
 }
 
@@ -1008,6 +1032,8 @@ code {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: 8px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .external-link {
@@ -1016,6 +1042,8 @@ code {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .external-link:hover {
@@ -1024,6 +1052,28 @@ code {
 
 .external-link__icon {
   font-size: 0.85em;
+}
+
+/* Tablet: contenido estrecho con nav lateral */
+@media (max-width: 1024px) {
+  .site-header__inner,
+  .site-footer {
+    padding-left: 1.25rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Móvil estrecho: una columna en grids */
+@media (max-width: 480px) {
+  .card-grid--2,
+  .media-row,
+  .software-tools,
+  .example-grid,
+  .conversion-grid,
+  .compare-grid,
+  .pros-cons {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Mobile */

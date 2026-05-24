@@ -33,8 +33,8 @@ export function ImagePlaceholder({ slot, className = '' }: ImagePlaceholderProps
           </svg>
           <p className="image-slot__alt-text">{slot.alt}</p>
           <p className="image-slot__hint">
-            Imagen pendiente — configura <code>src</code> en{' '}
-            <code>src/config/images.ts</code>
+            Imagen pendiente — edita <code>src</code> en{' '}
+            <code>images.ts</code>
           </p>
           <p className="image-slot__id">
             ID: <code>{slot.id}</code>
