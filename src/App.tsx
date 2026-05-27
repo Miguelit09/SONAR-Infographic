@@ -7,7 +7,7 @@ import { View03Software } from './components/sections/View03Software';
 import { View04Results } from './components/sections/View04Results';
 import { View05ProsCons } from './components/sections/View05ProsCons';
 import { View06Examples } from './components/sections/View06Examples';
-import { SECTION_IDS } from './data/content';
+import { AUTHOR, SECTION_IDS } from './data/content';
 import { useActiveSection } from './hooks/useActiveSection';
 
 function App() {
@@ -28,6 +28,10 @@ function App() {
       </main>
       <footer className="site-footer">
         <p>SONAR y ecosondas en geofísica y oceanografía</p>
+        <p className="site-footer__credit">Autor: {AUTHOR.name}</p>
+        <p className="site-footer__credit">
+          Ficha: {AUTHOR.program} ({AUTHOR.studentId})
+        </p>
       </footer>
     </div>
   );

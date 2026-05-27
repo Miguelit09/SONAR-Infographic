@@ -3,6 +3,12 @@ export const SITE = {
   subtitle: 'Infografía interactiva',
 } as const;
 
+export const AUTHOR = {
+  name: 'Miguel Angel Pasachoa Patiño',
+  program: 'ANALISIS Y DESARROLLO DE SOFTWARE',
+  studentId: '3336090',
+} as const;
+
 export const NAV_ITEMS = [
   { id: 'vista-1', label: 'Ondas sonoras', number: 1 },
   { id: 'vista-2', label: 'Transductor', number: 2 },

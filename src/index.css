@@ -235,6 +235,10 @@ code {
   margin: 0;
 }
 
+.site-footer__credit {
+  margin-top: 0.35rem;
+}
+
 /* Sections */
 .view-section {
   margin-bottom: 4rem;
